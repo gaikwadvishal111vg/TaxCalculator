@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <title>Tax Calculater</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <center>
+      <div class="tax_container">
+        <h2>Tax Calculater</h2>
+        <form action="">
+          <div class="tax_input">
+            <input type="text" name="name" id="name" />
+            <span>Name</span>
+          </div>
+          <div class="tax_input">
+            <input
+              type="number"
+              name="income"
+              id="income"
+              placeholder="Enter Salary"
+            />
+            <span>Income</span>
+          </div>
+          
+          <div class="tax_calculate">
+            <!-- <select name="" id="">
+              <option value=""></option>
+            </select> -->
+            <input
+              type="button"
+              class="btn"
+              value="Calculate"
+              onclick="calculateTax()"
+            />
+            <!-- <input
+            type="button"
+            class="btn"
+            value="Pay"
+           
+          /> -->
+          <button id="rzp-button1">Pay</button>
+          </div>
+          
+        </form>
+        <table id="user_info">
+          <tr>
+            <!-- <th>Sr.No</th> -->
+            <th>Name</th>
+            <th>Income</th>
+            <th>Tax Deduction</th>
+            <th>Account Balance</th>
+          </tr>
+        </table>
+        
+        <textarea name="Comment" class="comment" cols="30" rows="10">
+Feedback</textarea
+        >
+        <button id="printBtn">Print</button>
+      </div>
+      
+    </center>
+   <!-- <script>
+    
+function calculateTax() {
+    var userName = document.getElementById("name").value;
+    var income = document.getElementById("income").value;
+
+    if (income <= 300000) {
+      var exemptTax = 0.0;
+    } else if (income <= 600000) {
+      var exemptTax = 5.0;
+    } else if (income <= 900000) {
+      var exemptTax = 10.0;
+    } else if (income <= 1200000) {
+      var exemptTax = 15.0;
+    } else if (income <= 1500000) {
+      var exemptTax = 20.0;
+    } else if (income <= 2042000) {
+      var exemptTax = 30.0;
+    }
+    let taxDeduction = (income * exemptTax) / 100;
+    let basicIncome = income - taxDeduction;
+    
+
+// let rowCountClassListObject = 1;
+    let userInformation = document.getElementById("user_info");
+    let row = userInformation.insertRow();
+    // let addSrCell = row.insertCell(0);
+    let addNameCell = row.insertCell(0);
+    let addSalaryCell = row.insertCell(1);
+    let addTaxDedCell = row.insertCell(2);
+    let addBalCell = row.insertCell(3);
+
+    // const newRow = userInformation.insertRow(-1);
+    //     newRow.classList.add("dynamicTableObject");
+    //     const cell = newRow.insertCell(0);
+    //     cell.innerHTML = rowCountClassListObject++;
+
+      // addSrCell.innerHTML = srNumber;
+    addNameCell.innerHTML = userName;
+    addSalaryCell.innerHTML = income;
+    addTaxDedCell.innerHTML = taxDeduction;
+    addBalCell.innerHTML = basicIncome;
+  }
+
+  const printBtn = document.getElementById("printBtn");
+
+  printBtn.addEventListener("click", function(){
+    print();
+  })
+
+
+   </script> -->
+    <script src="tax.js"></script>
+  </body>
+</html>
